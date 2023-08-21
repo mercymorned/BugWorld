@@ -71,12 +71,12 @@ public class Bug {
 	}
 
 	public String toText() {
-		return "Bug [species=" + species + ", name=" + name + ", symbol=" + symbol + ", x=" + x + ", y=" + y
-				+ ", energy=" + energy + ", idNum=" + idNum + "]";
+		return "Bug [ species = " + species + ", name = " + name + ", symbol = " + symbol + ", x = " + x + ", y = " + y
+				+ ", energy = " + energy + ", idNum = " + idNum + " ]";
 	}
 	@Override
 	public String toString() {
-		return "Bug [species=" + species + ", name=" + name + ", symbol=" + symbol + "]";
+		return "Bug [ species = " + species + ", name = " + name + ", symbol = " + symbol + " ]";
 	}
 
 }
