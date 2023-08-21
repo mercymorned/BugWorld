@@ -2,10 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello!");
-		System.out.println("Testing some stuff.");
-
+		Bug ladybug = new Bug ("ladybug", "Lady Bird", 'A', 50, 50, 100, 123);
 	}
 
 }

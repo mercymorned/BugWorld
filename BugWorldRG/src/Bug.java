@@ -50,6 +50,9 @@ public class Bug {
 	public void setIdNum(int idNum) {
 		this.idNum = idNum;
 	}
+	public Bug () {
+		
+	}
 	public Bug(String species, String name, char symbol, int x, int y, int energy, int idNum) {
 		super();
 		this.species = species;
@@ -60,12 +63,14 @@ public class Bug {
 		this.energy = energy;
 		this.idNum = idNum;
 	}
-	@Override
-	public String toString() {
+
+	public String toText() {
 		return "Bug [species=" + species + ", name=" + name + ", symbol=" + symbol + ", x=" + x + ", y=" + y
 				+ ", energy=" + energy + ", idNum=" + idNum + "]";
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "Bug [species=" + species + ", name=" + name + ", symbol=" + symbol;
+	}
 
 }
