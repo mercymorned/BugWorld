@@ -8,6 +8,7 @@ public class Bug {
 	private int energy;
 	private int idNum;
 	
+	
 	public String getSpecies() {
 		return species;
 	}
