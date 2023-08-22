@@ -82,7 +82,28 @@ public class Bug {
 	
 	//Task 4: create move feature
 	public void moveBug() {
-		
+		int direction = randomDirection();
+		int newX = x;
+		int newY = y;
+		if (direction == 0) {
+			newY--;
+		} else if (direction == 1) {
+			newX++;
+		} else if (direction == 2) {
+			newY++;
+		} else if (direction == 3) {
+			newX--;
+		}
+		if (withinBounds(newX, newY)) {
+			x = newX;
+			y = newY;
+		}
+	}
+	private boolean withinBounds(int newX, int newY) {
+		return newX > 0 && newX < 500 && newY > 0 && newY < 500;
+	}
+	private int randomDirection() {
+		return (int)(Math.random()*4);
 	}
 
 }

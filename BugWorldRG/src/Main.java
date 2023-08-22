@@ -15,6 +15,10 @@ public class Main {
 		for (Bug bs : bugs)
 		System.out.println(bs.toText()); // demonstrates toText
 		
+		//testing move function
+		ladybug.moveBug();
+		System.out.println(ladybug.toText());
+		
 	}
 
 	public static void main(String[] args) {
