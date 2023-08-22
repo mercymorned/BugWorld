@@ -79,5 +79,10 @@ public class Bug {
 	public String toString() {
 		return "Bug [ species = " + species + ", name = " + name + ", symbol = " + symbol + " ]";
 	}
+	
+	//Task 4: create move feature
+	public void moveBug() {
+		
+	}
 
 }
