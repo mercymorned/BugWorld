@@ -8,6 +8,7 @@ public class Bug {
 	private int y;
 	private int energy;
 	private int idNum;
+	static int counter = 0;
 
 	public String getSpecies() {
 		return species;
@@ -166,6 +167,6 @@ public class Bug {
 	}
 	
 	private void randomIdNum() {
-		int idNum = (int) (Math.random() * 50); //assigns energy level between 0 and 50
+		this.idNum = counter++;
 	}
 }

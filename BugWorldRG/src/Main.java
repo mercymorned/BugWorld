@@ -6,23 +6,25 @@ public class Main {
 	private List<Bug> bugs = new ArrayList<>();
 	
 	public Main() {
+/* My code for testing functionality while building
 		Bug ladybug = new Bug("ladybug", "Lady Bird", 'A', 50, 50, 100, 123);
 		bugs.add(ladybug);
 		Bug defaultBug = new Bug(); //default bug defined in Bug class
 		bugs.add(defaultBug);
-		Bug spider = userInput(); //asks user to make a spider
-		bugs.add(spider);
+		Bug userBug = userInput(); //asks user to make a bug
+		bugs.add(userBug);
 		for (Bug bs : bugs)
 		System.out.println(bs.toText()); // demonstrates toText
 		
 		//testing move function
 		ladybug.moveBug();
 		System.out.println(ladybug.toText());
-		
+
+*/		
 	}
 
 	public static void main(String[] args) {
-		// create a new bug with specified parameters then call default bug
+		// create a new bug with specified or randomized parameters then call default bug
 		new Main();
 	}
 
