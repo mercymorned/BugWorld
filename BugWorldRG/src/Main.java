@@ -27,7 +27,7 @@ public class Main {
 		// create a new bug with specified or randomized parameters then call default bug
 		new Main();
 	}
-
+/* Day 1 Bug input code
 	public Bug userInput() {
 		// set up Scanner
 		Scanner myBug = new Scanner(System.in);
@@ -47,5 +47,5 @@ public class Main {
 		int idNum = myBug.nextInt();
 		return new Bug(species, name, symbol, x, y, energy, idNum);
 	}
-
+*/
 }

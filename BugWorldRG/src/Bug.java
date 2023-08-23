@@ -1,22 +1,22 @@
 import java.util.Random;
 
 public class Bug {
-	private String species;
-	private String name;
+	//private String species;
+	protected String name;
 	private char symbol;
-	private int x;
-	private int y;
-	private int energy;
-	private int idNum;
+	protected int x;
+	protected int y;
+	protected int energy;
+	protected int idNum;
 	static int counter = 1;
 
-	public String getSpecies() {
-		return species;
-	}
-
-	public void setSpecies(String species) {
-		this.species = species;
-	}
+//	public String getSpecies() {
+//		return species;
+//	}
+//
+//	public void setSpecies(String species) {
+//		this.species = species;
+//	}
 
 	public String getName() {
 		return name;
@@ -67,7 +67,7 @@ public class Bug {
 	}
 
 	public Bug() {
-		randomSpecies();
+		//randomSpecies();
 		randomName();
 		randomX();
 		randomY();
@@ -84,11 +84,11 @@ public class Bug {
 //		this.idNum = 100;
 	}
 
-	public Bug(String species, String name, char symbol, int x, int y, int energy, int idNum) {
+	public Bug(String name, int x, int y, int energy, int idNum) {
 		super();
-		this.species = species;
+		//this.species = species;
 		this.name = name;
-		this.symbol = symbol;
+		//this.symbol = symbol;
 		this.x = x;
 		this.y = y;
 		this.energy = energy;
@@ -96,13 +96,13 @@ public class Bug {
 	}
 
 	public String toText() {
-		return "Bug [ species = " + species + ", name = " + name + ", symbol = " + symbol + ", x = " + x + ", y = " + y
+		return "Bug [ name = " + name + ", x = " + x + ", y = " + y
 				+ ", energy = " + energy + ", idNum = " + idNum + " ]";
 	}
 
 	@Override
 	public String toString() {
-		return "Bug [ species = " + species + ", name = " + name + ", symbol = " + symbol + " ]";
+		return "Bug [ name = " + name + " ]";
 	}
 
 	// Task 4: create move feature
@@ -126,7 +126,7 @@ public class Bug {
 	}
 
 	private boolean withinBounds(int newX, int newY) {
-		return newX > 0 && newX < 15 && newY > 0 && newY < 45;
+		return newX > 0 && newX < 40 && newY > 0 && newY < 15;
 	}
 
 	private int randomDirection() {
@@ -134,17 +134,17 @@ public class Bug {
 	}
 
 	// code to generate random species in Bug World
-	private void randomSpecies() {
-		String[] speciesList = {"bee", "fly", "ladybug", "beetle", "moth", "weta", "butterfly", "spider", "worm",
-				"ant", "centipede"};
-		int speciesIndex = new Random().nextInt(speciesList.length);
-		species = speciesList[speciesIndex];
-		if (!species.isEmpty()) {
-			symbol = species.charAt(0);
-		} else {
-			symbol = '?';
-		}
-	}
+//	private void randomSpecies() {
+//		String[] speciesList = {"bee", "fly", "ladybug", "beetle", "moth", "weta", "butterfly", "spider", "worm",
+//				"ant", "centipede"};
+//		int speciesIndex = new Random().nextInt(speciesList.length);
+//		species = speciesList[speciesIndex];
+//		if (!species.isEmpty()) {
+//			symbol = species.charAt(0);
+//		} else {
+//			symbol = '?';
+//		}
+//	}
 
 	private void randomName() {
 		String[] nameList = {"Lyd", "Sash", "Jay", "Lindsay", "Evan", "Michelle", "Amaranta", "Kristina", "Jehan",
@@ -155,11 +155,11 @@ public class Bug {
 	}
 
 	private void randomX() {
-		this.x = (int) (Math.random() * 15); // assigns x position between 0 and 15
+		this.x = (int) (Math.random() * 40); // assigns x position between 0 and 15
 	}
 
 	private void randomY() {
-		this.y = (int) (Math.random() * 45); // assigns y position between 0 and 40
+		this.y = (int) (Math.random() * 15); // assigns y position between 0 and 40
 	}
 
 	private void randomEnergy() {
