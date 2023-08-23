@@ -8,7 +8,7 @@ public class Bug {
 	private int y;
 	private int energy;
 	private int idNum;
-	static int counter = 0;
+	static int counter = 1;
 
 	public String getSpecies() {
 		return species;
@@ -73,7 +73,7 @@ public class Bug {
 		randomY();
 		randomEnergy();
 		randomIdNum();
-		
+
 // Code below is out-dated, from initial one type of default bug
 //		this.species = "bee";
 //		this.name = "Bumblebee";
@@ -126,7 +126,7 @@ public class Bug {
 	}
 
 	private boolean withinBounds(int newX, int newY) {
-		return newX > 0 && newX < 500 && newY > 0 && newY < 500;
+		return newX > 0 && newX < 15 && newY > 0 && newY < 45;
 	}
 
 	private int randomDirection() {
@@ -135,8 +135,8 @@ public class Bug {
 
 	// code to generate random species in Bug World
 	private void randomSpecies() {
-		String[] speciesList = { "bee", "fly", "ladybug", "beetle", "moth", "weta", "butterfly", "spider", "worm",
-				"ant", "centipede" };
+		String[] speciesList = {"bee", "fly", "ladybug", "beetle", "moth", "weta", "butterfly", "spider", "worm",
+				"ant", "centipede"};
 		int speciesIndex = new Random().nextInt(speciesList.length);
 		species = speciesList[speciesIndex];
 		if (!species.isEmpty()) {
@@ -147,25 +147,25 @@ public class Bug {
 	}
 
 	private void randomName() {
-		String[] nameList = { "Lyd", "Sash", "Jay", "Lindsay", "Evan", "Michelle", "Amaranta", "Kristina", "Jehan",
-				"Matt", "Anna", "Gavin", "Nimi", "Beth", "Leon" };
+		String[] nameList = {"Lyd", "Sash", "Jay", "Lindsay", "Evan", "Michelle", "Amaranta", "Kristina", "Jehan",
+				"Matt", "Anna", "Gavin", "Nimi", "Beth", "Leon", "Bianca", "Thumin", "Veppam", "Jhandra", "Xanthus",
+				"Caeso", "Nadya", "Kjell", "Aurelius", "Eliazar", "Chrys", "Aalea"};
 		int nameIndex = new Random().nextInt(nameList.length);
 		name = nameList[nameIndex];
 	}
 
-
 	private void randomX() {
-		this.x = (int) (Math.random() * 500); //assigns x position between 0 and 500
+		this.x = (int) (Math.random() * 15); // assigns x position between 0 and 15
 	}
-	
+
 	private void randomY() {
-		this.y = (int) (Math.random() * 500); //assigns y position between 0 and 500
+		this.y = (int) (Math.random() * 45); // assigns y position between 0 and 40
 	}
-	
+
 	private void randomEnergy() {
-		this.energy = (int) (Math.random() * 50); //assigns energy level between 0 and 50
+		this.energy = (int) (Math.random() * 100); // assigns energy level between 0 and 100
 	}
-	
+
 	private void randomIdNum() {
 		this.idNum = counter++;
 	}
