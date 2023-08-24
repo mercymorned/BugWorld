@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Bug {
-	//private String species;
+	private String species;
 	protected String name;
 	private char symbol;
 	protected int x;
@@ -10,13 +10,13 @@ public class Bug {
 	protected int idNum;
 	static int counter = 1;
 
-//	public String getSpecies() {
-//		return species;
-//	}
-//
-//	public void setSpecies(String species) {
-//		this.species = species;
-//	}
+	public String getSpecies() {
+		return species;
+	}
+
+	public void setSpecies(String species) {
+		this.species = species;
+	}
 
 	public String getName() {
 		return name;
@@ -67,7 +67,7 @@ public class Bug {
 	}
 
 	public Bug() {
-		//randomSpecies();
+		// randomSpecies();
 		randomName();
 		randomX();
 		randomY();
@@ -86,9 +86,9 @@ public class Bug {
 
 	public Bug(String name, int x, int y, int energy, int idNum) {
 		super();
-		//this.species = species;
+		// this.species = species;
 		this.name = name;
-		//this.symbol = symbol;
+		// this.symbol = symbol;
 		this.x = x;
 		this.y = y;
 		this.energy = energy;
@@ -96,8 +96,8 @@ public class Bug {
 	}
 
 	public String toText() {
-		return "Bug [ name = " + name + ", x = " + x + ", y = " + y
-				+ ", energy = " + energy + ", idNum = " + idNum + " ]";
+		return "Bug [ name = " + name + ", x = " + x + ", y = " + y + ", energy = " + energy + ", idNum = " + idNum
+				+ " ]";
 	}
 
 	@Override
@@ -147,9 +147,9 @@ public class Bug {
 //	}
 
 	private void randomName() {
-		String[] nameList = {"Lyd", "Sash", "Jay", "Lindsay", "Evan", "Michelle", "Amaranta", "Kristina", "Jehan",
+		String[] nameList = { "Lyd", "Sash", "Jay", "Lindsay", "Evan", "Michelle", "Amaranta", "Kristina", "Jehan",
 				"Matt", "Anna", "Gavin", "Nimi", "Beth", "Leon", "Bianca", "Thumin", "Veppam", "Jhandra", "Xanthus",
-				"Caeso", "Nadya", "Kjell", "Aurelius", "Eliazar", "Chrys", "Aalea"};
+				"Caeso", "Nadya", "Kjell", "Aurelius", "Eliazar", "Chrys", "Aalea" };
 		int nameIndex = new Random().nextInt(nameList.length);
 		name = nameList[nameIndex];
 	}
