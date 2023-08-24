@@ -18,9 +18,9 @@ public class World {
 		bugCitizens.add(bw3);
 		Omnivore bw4 = new Omnivore();
 		bugCitizens.add(bw4);
-		Omnivore  bw5 = new Omnivore ();
+		Omnivore bw5 = new Omnivore();
 		bugCitizens.add(bw5);
-		Omnivore  bw6 = new Omnivore();
+		Omnivore bw6 = new Omnivore();
 		bugCitizens.add(bw6);
 		Carnivore bw7 = new Carnivore();
 		bugCitizens.add(bw7);
@@ -28,8 +28,6 @@ public class World {
 		bugCitizens.add(bw8);
 		Carnivore bw9 = new Carnivore();
 		bugCitizens.add(bw9);
-		for (Bug bs : bugCitizens)
-			System.out.println(bs.toText());
 		// add plants to draw
 		Plant pw1 = new Plant();
 		plants.add(pw1);
@@ -43,9 +41,7 @@ public class World {
 		plants.add(pw5);
 		Plant pw6 = new Plant();
 		plants.add(pw6);
-		for (Plant p : plants)
-			System.out.println(p.toString());
-		//add obstacles to draw
+		// add obstacles to draw
 		Obstacle ob1 = new Obstacle();
 		obstacles.add(ob1);
 		Obstacle ob2 = new Obstacle();
@@ -54,12 +50,48 @@ public class World {
 		obstacles.add(ob3);
 		Obstacle ob4 = new Obstacle();
 		obstacles.add(ob4);
-		for (Obstacle o : obstacles)
-			System.out.println(o.toString());
 		// populate the world with bugs and plants
 		drawWorld();
 		updateWorld();
 		drawWorld();
+
+		// print lists of objects in the console
+		// sort bugs by energy
+		this.bugCitizens.sort(new BugEnergyComparator());
+		// print bug info in console
+		System.out.println("Bug Citizens sorted by energy level: ");
+		for (Bug bs : bugCitizens)
+			System.out.println(bs.toText());
+		System.out.println("*******");
+
+		// sort bugs by name
+		this.bugCitizens.sort(new BugNameComparator());
+		// print bug info in console
+		System.out.println("Bug Citizens sorted alaphabetically by name: ");
+		for (Bug bs : bugCitizens)
+			System.out.println(bs.toText());
+		System.out.println("*******");
+		
+		// sort bugs by species
+		this.bugCitizens.sort(new BugSpeciesComparator());
+		// print bug info in console
+		System.out.println("Bug Citizens sorted by species: ");
+		for (Bug bs : bugCitizens)
+			System.out.println(bs.toText());
+		System.out.println("*******");
+
+		// sort plants by size
+		this.plants.sort(new PlantSizeComparator());
+		// print plant info in console
+		System.out.println("Plants sorted by size: ");
+		for (Plant p : plants)
+			System.out.println(p.toString());
+		System.out.println("*******");
+
+		// print obstacle info in console
+		for (Obstacle o : obstacles)
+			System.out.println(o.toString());
+
 	}
 
 	public void drawWorld() {
@@ -78,15 +110,15 @@ public class World {
 						break;
 					}
 				}
-					for (i = 0; i < obstacles.size(); i++) {
+				for (i = 0; i < obstacles.size(); i++) {
 					Obstacle o = obstacles.get(i);
 					if (o.getX() == x && o.getY() == y) {
 						System.out.print(o.getObstSymbol());
 						break;
 					}
-					
+
 				}
-				
+
 				for (i = 0; i < bugCitizens.size(); i++) {
 					Bug b = bugCitizens.get(i);
 					if (b.getX() == x && b.getY() == y) {

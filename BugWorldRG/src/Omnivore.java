@@ -3,7 +3,7 @@ import java.util.Random;
 public class Omnivore extends Bug {
 	private String species;
 	private char symbol;
-
+@Override
 	public String getSpecies() {
 		return species;
 	}
