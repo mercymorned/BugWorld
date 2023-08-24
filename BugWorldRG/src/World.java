@@ -6,6 +6,7 @@ public class World {
 	private static int w = 40;
 	private List<Bug> bugCitizens = new ArrayList<>();
 	private List<Plant> plants = new ArrayList<>();
+	private List<Obstacle> obstacles = new ArrayList<>();
 
 	public World() {
 		// add bugs to draw
@@ -44,6 +45,17 @@ public class World {
 		plants.add(pw6);
 		for (Plant p : plants)
 			System.out.println(p.toString());
+		//add obstacles to draw
+		Obstacle ob1 = new Obstacle();
+		obstacles.add(ob1);
+		Obstacle ob2 = new Obstacle();
+		obstacles.add(ob2);
+		Obstacle ob3 = new Obstacle();
+		obstacles.add(ob3);
+		Obstacle ob4 = new Obstacle();
+		obstacles.add(ob4);
+		for (Obstacle o : obstacles)
+			System.out.println(o.toString());
 		// populate the world with bugs and plants
 		drawWorld();
 		updateWorld();
@@ -66,6 +78,14 @@ public class World {
 						break;
 					}
 				}
+					for (i = 0; i < obstacles.size(); i++) {
+					Obstacle o = obstacles.get(i);
+					if (o.getX() == x && o.getY() == y) {
+						System.out.print(o.getObstSymbol());
+						break;
+					}
+					
+				}
 				
 				for (i = 0; i < bugCitizens.size(); i++) {
 					Bug b = bugCitizens.get(i);
@@ -74,6 +94,7 @@ public class World {
 						break;
 					}
 				}
+
 				if (i == bugCitizens.size())
 					System.out.print(' ');
 			}
@@ -116,8 +137,7 @@ public class World {
 	 */
 
 	public static void main(String[] args) {
-		// create a new bug with specified or randomized parameters then call default
-		// bug
+		// create a new World to populate
 		new World();
 	}
 
